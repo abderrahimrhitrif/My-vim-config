@@ -1,0 +1,2 @@
+require("ash")
+print("Hello")
