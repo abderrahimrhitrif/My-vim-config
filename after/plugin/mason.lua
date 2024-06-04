@@ -12,7 +12,7 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-  ensure_installed = { "clangd","jdtls"   }, -- Add other servers you want to ensure are installed
+  ensure_installed = { "clangd","jdtls","golangci_lint_ls","rust_analyzer", "svelte"   }, -- Add other servers you want to ensure are installed
 })
 
 -- Function to run when an LSP connects to a particular buffer
@@ -53,9 +53,18 @@ lspconfig.clangd.setup {
   on_attach = on_attach,
 }
 
--- Add other language servers here
-
 lspconfig.jdtls.setup {
   on_attach = on_attach,
 }
 
+lspconfig.golangci_lint_ls.setup {
+  on_attach = on_attach,
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+}
+
+lspconfig.svelte.setup {
+  on_attach = on_attach,
+}
